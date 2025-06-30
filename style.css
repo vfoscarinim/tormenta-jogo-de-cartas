@@ -1,0 +1,128 @@
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f3f0e6;
+  color: #333;
+  padding: 20px;
+}
+
+/* === Cabeçalho === */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* === Campo de Batalha === */
+.battlefield {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* Arenas dos jogadores */
+.arena {
+  width: 200px;
+  height: 200px;
+  border: 3px dashed #a52a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff8f0;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Botões e log */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a52a2a;
+}
+
+/* Log de luta */
+.log {
+  width: 250px;
+  min-height: 60px;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* === Seção de seleção de guerreiros === */
+.selecao-guerreiros {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Card de guerreiro */
+.card {
+  width: 120px;
+  padding: 10px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  background-color: #fffaf0;
+  cursor: grab;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-color: #8b0000;
+}
+
+/* === Rodapé === */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+}
+
