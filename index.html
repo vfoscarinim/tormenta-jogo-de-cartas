@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Batalha Medieval</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Titulo e instruções aos jogadores -->
+     <header> 
+        <h1>⚔️ Batalha Medieval ⚔️</h1>
+        <p>Arraste seu guerreiro para ver quem vencerá</p>
+     </header>
+
+     <!-- Área de batalha: duas arenas e botões -->
+
+     <main> 
+        <section class="battlefield">
+            <!--Arena jogador 1-->
+             <div class="arena" id="arena1">
+                <p>Arena</p>
+             </div>
+
+             <!--Botões de ação-->
+             <div class="controls">
+                <button id="fightBtn">Lutar</button>
+                <div id="logLuta" class="log">Log de Luta</div>
+                <button id="resetBtn">Resetar</button>
+             </div>
+
+             <!--Arena jogador 2-->
+             <div class="arena" id="arena2">
+                <p>Arena</p>
+             </div>
+        </section>
+
+        <!--ESCOLHA DE GUERREIROS-->
+        <section class="selecao-guerreiros">
+            <h2>Escolha seus guerreiros</h2>
+
+            <!--Cards dos personagens-->
+            <div class="cards-container">
+
+                <!--Cards dos guerreiros-->
+                <div class="card" draggable="true" data-ataque="85" data-defesa="50">
+          <h3>Cavaleiro</h3>
+          <p>🗡️ Ataque: 85</p>
+          <p>🛡️ Defesa: 120</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="110" data-defesa="80">
+          <h3>Bárbaro</h3>
+          <p>🗡️ Ataque: 110</p>
+          <p>🛡️ Defesa: 80</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="95" data-defesa="70">
+          <h3>Arqueiro</h3>
+          <p>🗡️ Ataque: 95</p>
+          <p>🛡️ Defesa: 70</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="130" data-defesa="50">
+          <h3>Mago</h3>
+          <p>🗡️ Ataque: 130</p>
+          <p>🛡️ Defesa: 50</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="90" data-defesa="110">
+          <h3>Paladino</h3>
+          <p>🗡️ Ataque: 90</p>
+          <p>🛡️ Defesa: 110</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="120" data-defesa="60">
+          <h3>Assassino</h3>
+          <p>🗡️ Ataque: 120</p>
+          <p>🛡️ Defesa: 60</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="100" data-defesa="90">
+          <h3>Guerreiro</h3>
+          <p>🗡️ Ataque: 100</p>
+          <p>🛡️ Defesa: 90</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="140" data-defesa="40">
+          <h3>Berserker</h3>
+          <p>🗡️ Ataque: 140</p>
+          <p>🛡️ Defesa: 40</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="80" data-defesa="130">
+          <h3>Templário</h3>
+          <p>🗡️ Ataque: 80</p>
+          <p>🛡️ Defesa: 130</p>
+         </div>
+
+         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
+          <h3>Lanceiro</h3>
+          <p>🗡️ Ataque: 105</p>
+          <p>🛡️ Defesa: 75</p>
+         </div>
+            </div>
+        </section>
+     </main>
+
+     <!--Rodapé de créditos-->
+     <footer>
+        <p>Vitória F. Machado</p>
+     </footer>
+
+     <script src="script.js"></script>
+</body>
+</html>
