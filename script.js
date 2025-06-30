@@ -38,3 +38,45 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+// Botão de luta
+const fightBtn = document.getElementById('fightBtn');
+const logLuta = document.getElementById('logLuta');
+
+fightBtn.addEventListener('click', () => {
+  // Seleciona os cards dentro das arenas
+  const guerreiro1 = document.querySelector('#arena1 .card');
+  const guerreiro2 = document.querySelector('#arena2 .card');
+
+  // Verifica se os dois jogadores selecionaram um guerreiro
+  if (!guerreiro1 || !guerreiro2) {
+    logLuta.textContent = "Ambas as arenas precisam de um guerreiro!";
+    return;
+  }
+
+  // Recupera os atributos dos cards
+  const ataque1 = parseInt(guerreiro1.dataset.ataque);
+  const defesa1 = parseInt(guerreiro1.dataset.defesa);
+  const nome1 = guerreiro1.querySelector('h3').textContent;
+
+  const ataque2 = parseInt(guerreiro2.dataset.ataque);
+  const defesa2 = parseInt(guerreiro2.dataset.defesa);
+  const nome2 = guerreiro2.querySelector('h3').textContent;
+
+  // Simples cálculo de força total
+  const poder1 = ataque1 * 1.2 + defesa1;
+  const poder2 = ataque2 * 1.2 + defesa2;
+
+  // Define o vencedor
+  let resultado = "";
+  if (poder1 > poder2) {
+    resultado = `🏆 ${nome1} venceu o duelo contra ${nome2}!`;
+  } else if (poder2 > poder1) {
+    resultado = `🏆 ${nome2} venceu o duelo contra ${nome1}!`;
+  } else {
+    resultado = `⚖️ Empate entre ${nome1} e ${nome2}!`;
+  }
+
+  // Exibe no log
+  logLuta.textContent = resultado;
+});
