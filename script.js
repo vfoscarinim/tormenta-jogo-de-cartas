@@ -43,6 +43,26 @@ window.addEventListener("DOMContentLoaded", () => {
 const fightBtn = document.getElementById('fightBtn');
 const logLuta = document.getElementById('logLuta');
 
+// Botão resetar
+const resetBtn = document.getElementById('resetBtn');
+const cardsContainer = document.querySelector('.cards-container');
+
+resetBtn.addEventListener('click', () => {
+  // Remove os cards das arenas e devolve para o container original
+  const arenas = [document.getElementById('arena1'), document.getElementById('arena2')];
+
+  arenas.forEach(arena => {
+    const card = arena.querySelector('.card');
+    if (card) {
+      cardsContainer.appendChild(card); // Move o card de volta
+    }
+  });
+
+  // Limpa o log de luta
+  logLuta.textContent = "Log de Luta";
+});
+
+
 fightBtn.addEventListener('click', () => {
   // Seleciona os cards dentro das arenas
   const guerreiro1 = document.querySelector('#arena1 .card');
