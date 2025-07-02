@@ -62,41 +62,89 @@ resetBtn.addEventListener('click', () => {
   logLuta.textContent = "Log de Luta";
 });
 
+// Objeto de habilidades por classe
+const habilidades = {
+  Arcanista: (stats) => {
+    stats.ataque += 10;
+    logLuta.textContent += `\n✨ Arcanista canalizou magia e ganhou +10 de ataque!`;
+  },
+  Bárbaro: (stats) => {
+    if (Math.random() < 0.5) {
+      stats.ataque *= 2;
+      logLuta.textContent += `\n💢 Bárbaro enfurecido! Ataque dobrado.`;
+    }
+  },
+  Clérigo: (stats) => {
+    stats.defesa += 20;
+    logLuta.textContent += `\n🙏 Clérigo se protegeu com oração sagrada (+20 defesa).`;
+  },
+  Ladino: (stats, oponente) => {
+    if (oponente.defesa < stats.ataque) {
+      oponente.defesa = 0;
+      logLuta.textContent += `\n🗡️ Ladino atingiu o ponto fraco! Defesa inimiga anulada.`;
+    }
+  },
+  Paladino: (stats) => {
+    stats.ataque += 5;
+    stats.defesa += 5;
+    logLuta.textContent += `\n🛡️ Paladino recebeu benção divina (+5 ATQ / +5 DEF).`;
+  },
+  Caçador: (stats, oponente) => {
+    if (stats.ataque > oponente.ataque) {
+      oponente.ataque = 0;
+      logLuta.textContent += `\n🏹 Caçador atacou primeiro e anulou o ataque inimigo.`;
+    }
+  },
+  Druida: (stats) => {
+    if (Math.random() < 0.3) {
+      stats.defesa += 50;
+      logLuta.textContent += `\n🌿 Druida invocou proteção natural (+50 DEF).`;
+    }
+  },
+  Bucaneiro: (stats) => {
+    stats.ataque += Math.floor(Math.random() * 30);
+    logLuta.textContent += `\n🏴‍☠️ Bucaneiro usou tática surpresa e aumentou ataque!`;
+  },
+};
 
 fightBtn.addEventListener('click', () => {
-  // Seleciona os cards dentro das arenas
   const guerreiro1 = document.querySelector('#arena1 .card');
   const guerreiro2 = document.querySelector('#arena2 .card');
 
-  // Verifica se os dois jogadores selecionaram um guerreiro
   if (!guerreiro1 || !guerreiro2) {
     logLuta.textContent = "Ambas as arenas precisam de um guerreiro!";
     return;
   }
 
-  // Recupera os atributos dos cards
-  const ataque1 = parseInt(guerreiro1.dataset.ataque);
-  const defesa1 = parseInt(guerreiro1.dataset.defesa);
   const nome1 = guerreiro1.querySelector('h3').textContent;
-
-  const ataque2 = parseInt(guerreiro2.dataset.ataque);
-  const defesa2 = parseInt(guerreiro2.dataset.defesa);
   const nome2 = guerreiro2.querySelector('h3').textContent;
 
-  // Simples cálculo de força total
-  const poder1 = ataque1 * 1.2 + defesa1;
-  const poder2 = ataque2 * 1.2 + defesa2;
+  let stats1 = {
+    ataque: parseInt(guerreiro1.dataset.ataque),
+    defesa: parseInt(guerreiro1.dataset.defesa)
+  };
 
-  // Define o vencedor
+  let stats2 = {
+    ataque: parseInt(guerreiro2.dataset.ataque),
+    defesa: parseInt(guerreiro2.dataset.defesa)
+  };
+
+  logLuta.textContent = "Habilidades ativadas:";
+
+  if (habilidades[nome1]) habilidades[nome1](stats1, stats2);
+  if (habilidades[nome2]) habilidades[nome2](stats2, stats1);
+
+  const poder1 = stats1.ataque * 1.2 + stats1.defesa;
+  const poder2 = stats2.ataque * 1.2 + stats2.defesa;
+
   let resultado = "";
   if (poder1 > poder2) {
-    resultado = `🏆 ${nome1} venceu o duelo contra ${nome2}!`;
+    resultado = `\n🏆 ${nome1} venceu o duelo contra ${nome2}!`;
   } else if (poder2 > poder1) {
-    resultado = `🏆 ${nome2} venceu o duelo contra ${nome1}!`;
+    resultado = `\n🏆 ${nome2} venceu o duelo contra ${nome1}!`;
   } else {
-    resultado = `⚖️ Empate entre ${nome1} e ${nome2}!`;
+    resultado = `\n⚖️ Empate entre ${nome1} e ${nome2}!`;
   }
 
-  // Exibe no log
-  logLuta.textContent = resultado;
+  logLuta.textContent += resultado;
 });

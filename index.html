@@ -1,141 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Batalha Medieval</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batalha Medieval</title>
 
-    <!-- Titulo e instruções aos jogadores -->
-     <header> 
-        <h1>⚔️ Batalha Medieval ⚔️</h1>
-        <p>Arraste seu guerreiro para ver quem vencerá</p>
-     </header>
+    <!-- linka o CSS externo que foi substituído logo abaixo -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== Cabeçalho =================================================== -->
+    <header>
+      <h1>⚔️ Tormenta - Jogo de Cartas ⚔️</h1>
+      <p>Arraste seus guerreiros para as arenas e veja quem vencerá!</p>
+    </header>
 
-     <!-- Área de batalha: duas arenas e botões -->
+    <!-- ===== Painel (arenas + controles) ================================ -->
+    <section class="board">
+      <!-- Arena 1 -->
+      <div class="arena" id="arena1">
+        <span class="arena-title">Arena do Guerreiro 1</span>
+        <!-- o card do guerreiro 1 será solto aqui -->
+      </div>
 
-     <main> 
-        <section class="battlefield">
-            <!--Arena jogador 1-->
-             <div class="arena" id="arena1">
-                <p>Arena</p>
-             </div>
+      <!-- Controles centrais -->
+      <div class="controls">
+        <div id="statusMsg" class="status">⚔ AGUARDANDO GUERREIROS ⚔</div>
 
-             <!--Botões de ação-->
-             <div class="controls">
-                <button id="fightBtn">Lutar</button>
-                <div id="logLuta" class="log">Log de Luta</div>
-                <button id="resetBtn">Resetar</button>
-             </div>
+        <button id="fightBtn">Lutar</button>
 
-             <!--Arena jogador 2-->
-             <div class="arena" id="arena2">
-                <p>Arena</p>
-             </div>
-        </section>
+        <div id="logLuta" class="log">
+          Bem‑vindo à Arena Medieval! Arraste dois guerreiros para as arenas e
+          clique em Lutar!
+        </div>
 
-        <!--ESCOLHA DE GUERREIROS-->
-        <section class="selecao-guerreiros">
-            <h2>Escolha seus guerreiros</h2>
+        <button id="resetBtn">Resetar Jogo</button>
+      </div>
 
-            <!--Cards dos personagens-->
-            <div class="cards-container">
+      <!-- Arena 2 -->
+      <div class="arena" id="arena2">
+        <span class="arena-title">Arena do Guerreiro 2</span>
+        <!-- o card do guerreiro 2 será solto aqui -->
+      </div>
+    </section>
 
-                <!--Cards dos guerreiros-->
-            <div class="card" draggable="true" data-ataque="85" data-defesa="50">
-          <h3>Arcanista</h3>
-          <p>🗡️ Ataque: 85</p>
-          <p>🛡️ Defesa: 120</p>
-         </div>
+    <!-- ===== Seleção de Guerreiros ===================================== -->
+    <section class="selecao-guerreiros">
+      <h2>Escolha seus Guerreiros</h2>
+      <div class="cards-container">
+        <div class="card" draggable="true" data-ataque="90" data-defesa="40">
+  <h3>Arcanista</h3>
+  <img src="arcanista.png">
+  <p>Ataque: 90</p>
+  <p>Defesa: 40</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="110" data-defesa="80">
-          <h3>Bárbaro</h3>
-          <p>🗡️ Ataque: 110</p>
-          <p>🛡️ Defesa: 80</p>
-         </div>
+<div class="card" draggable="true" data-ataque="110" data-defesa="70">
+  <h3>Bárbaro</h3>
+  <img src="barbaro.png">
+  <p>Ataque: 110</p>
+  <p>Defesa: 70</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="95" data-defesa="70">
-          <h3>Bardo</h3>
-          <p>🗡️ Ataque: 95</p>
-          <p>🛡️ Defesa: 70</p>
-         </div>
+<div class="card" draggable="true" data-ataque="85" data-defesa="60">
+  <h3>Bardo</h3>
+  <img src="bardo.png">
+  <p>Ataque: 85</p>
+  <p>Defesa: 60</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="130" data-defesa="50">
-          <h3>Bucaneiro</h3>
-          <p>🗡️ Ataque: 130</p>
-          <p>🛡️ Defesa: 50</p>
-         </div>
+<div class="card" draggable="true" data-ataque="120" data-defesa="50">
+  <h3>Bucaneiro</h3>
+  <img src="bucaneiro.png">
+  <p>Ataque: 120</p>
+  <p>Defesa: 50</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="90" data-defesa="110">
-          <h3>Caçador</h3>
-          <p>🗡️ Ataque: 90</p>
-          <p>🛡️ Defesa: 110</p>
-         </div>
+<div class="card" draggable="true" data-ataque="95" data-defesa="85">
+  <h3>Caçador</h3>
+  <img src="caçador.png">
+  <p>Ataque: 95</p>
+  <p>Defesa: 85</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="120" data-defesa="60">
-          <h3>Cavaleiro</h3>
-          <p>🗡️ Ataque: 120</p>
-          <p>🛡️ Defesa: 60</p>
-         </div>
+<div class="card" draggable="true" data-ataque="100" data-defesa="110">
+  <h3>Cavaleiro</h3>
+  <img src="cavaleiro.png">
+  <p>Ataque: 100</p>
+  <p>Defesa: 110</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="100" data-defesa="90">
-          <h3>Clérigo</h3>
-          <p>🗡️ Ataque: 100</p>
-          <p>🛡️ Defesa: 90</p>
-         </div>
+<div class="card" draggable="true" data-ataque="85" data-defesa="100">
+  <h3>Clérigo</h3>
+  <img src="clerigo.png">
+  <p>Ataque: 85</p>
+  <p>Defesa: 100</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="140" data-defesa="40">
-          <h3>Druida</h3>
-          <p>🗡️ Ataque: 140</p>
-          <p>🛡️ Defesa: 40</p>
-         </div>
+<div class="card" draggable="true" data-ataque="95" data-defesa="60">
+  <h3>Druida</h3>
+  <img src="druida.png">
+  <p>Ataque: 95</p>
+  <p>Defesa: 60</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="80" data-defesa="130">
-          <h3>Guerreiro</h3>
-          <p>🗡️ Ataque: 80</p>
-          <p>🛡️ Defesa: 130</p>
-         </div>
+<div class="card" draggable="true" data-ataque="90" data-defesa="120">
+  <h3>Guerreiro</h3>
+  <img src="guerreiro.png">
+  <p>Ataque: 90</p>
+  <p>Defesa: 120</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
-          <h3>Inventor</h3>
-          <p>🗡️ Ataque: 105</p>
-          <p>🛡️ Defesa: 75</p>
-         </div>
+<div class="card" draggable="true" data-ataque="95" data-defesa="85">
+  <h3>Inventor</h3>
+  <img src="inventor.png">
+  <p>Ataque: 95</p>
+  <p>Defesa: 85</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
-          <h3>Ladino</h3>
-          <p>🗡️ Ataque: 105</p>
-          <p>🛡️ Defesa: 75</p>
-         </div>
+<div class="card" draggable="true" data-ataque="100" data-defesa="70">
+  <h3>Ladino</h3>
+  <img src="ladino.png">
+  <p>Ataque: 100</p>
+  <p>Defesa: 70</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
-          <h3>Lutador</h3>
-          <p>🗡️ Ataque: 105</p>
-          <p>🛡️ Defesa: 75</p>
-         </div>
+<div class="card" draggable="true" data-ataque="100" data-defesa="80">
+  <h3>Lutador</h3>
+  <img src="lutador.png">
+  <p>Ataque: 100</p>
+  <p>Defesa: 80</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
-          <h3>Nobre</h3>
-          <p>🗡️ Ataque: 105</p>
-          <p>🛡️ Defesa: 75</p>
-         </div>
+<div class="card" draggable="true" data-ataque="90" data-defesa="90">
+  <h3>Nobre</h3>
+  <img src="nobre.png">
+  <p>Ataque: 90</p>
+  <p>Defesa: 90</p>
+</div>
 
-         <div class="card" draggable="true" data-ataque="105" data-defesa="75">
-          <h3>Paladino</h3>
-          <p>🗡️ Ataque: 105</p>
-          <p>🛡️ Defesa: 75</p>
-         </div>
-            </div>
-        </section>
-     </main>
+<div class="card" draggable="true" data-ataque="95" data-defesa="110">
+  <h3>Paladino</h3>
+  <img src="paladino.png">
+  <p>Ataque: 95</p>
+  <p>Defesa: 110</p>
+        
+      </div>
+    </section>
 
-     <!--Rodapé de créditos-->
-     <footer>
-        <p>Vitória F. Machado</p>
-     </footer>
+    <footer>vfoscarinim ©</footer>
 
-     <script src="script.js"></script>
-</body>
+    <!-- ===== JavaScript ================================================= -->
+    <script src="script.js"></script>
+  </body>
 </html>

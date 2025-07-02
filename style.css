@@ -1,13 +1,12 @@
-/* === Reset básico === */
+/* === Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", serif;
 }
-
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #f3f0e6;
+  background: #f3f0e6 url(Batalhe\ contra\ a\ Tormenta\ \(1\).png);
   color: #333;
   padding: 20px;
 }
@@ -17,112 +16,191 @@ header {
   text-align: center;
   margin-bottom: 30px;
 }
-
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  color: #4a2d2d; /* vinho queimado */
 }
-
 header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: #4a2d2d;
 }
 
-/* === Campo de Batalha === */
-.battlefield {
+/* === Painel central (arenas + botões) === */
+.board {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 30px;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: #4a2d2d; /* vinho bem escuro */
+  border: 4px solid #8b0000; /* vinho vivo – combina com teus botões */
+  border-radius: 8px;
+  padding: 25px 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  max-width: 950px;
+  margin: 0 auto 35px;
 }
 
-/* Arenas dos jogadores */
+/* === Arenas =========================================================== */
 .arena {
-  width: 200px;
-  height: 200px;
-  border: 3px dashed #a52a2a;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 3px dashed #8b0000;
+  background: #fffaf0;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff8f0;
+  margin-bottom: 15px;
+}
+.arena-title {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fffaf0;
+  padding: 2px 8px;
+  border: 2px solid #8b0000;
+  border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: bold;
-  text-align: center;
-  padding: 10px;
+  color: #4a2d2d;
 }
 
-/* Botões e log */
+/* === Controles ======================================================== */
 .controls {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  min-width: 260px;
+  max-width: 290px;
+  margin: 0 10px;
+}
+.status {
+  padding: 6px 12px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #ccc;
+  background: #e9e9e9;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #4a2d2d;
+}
+.log {
+  width: 100%;
+  min-height: 70px;
+  padding: 10px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: pre-line;
+  overflow-y: auto;
 }
 
+/* Botões --------------------------------------------------------------- */
 button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 10px 0;
   font-size: 1rem;
-  background-color: #8b0000;
+  font-weight: bold;
+  background: #8b0000;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.25s;
 }
-
 button:hover {
-  background-color: #a52a2a;
+  background: #a52a2a;
 }
 
-/* Log de luta */
-.log {
-  width: 250px;
-  min-height: 60px;
-  padding: 10px;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* === Seção de seleção de guerreiros === */
+/* === Seleção de Guerreiros =========================================== */
 .selecao-guerreiros {
-  margin-top: 30px;
   text-align: center;
 }
-
+.selecao-guerreiros h2 {
+  font-size: 1.4rem;
+  color: #4a2d2d;
+  margin-bottom: 15px;
+}
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Card de guerreiro */
+/* === Card ============================================================== */
 .card {
-  width: 120px;
-  padding: 10px;
-  border: 2px solid #555;
-  border-radius: 8px;
-  background-color: #fffaf0;
+  background: #fffaf0;
+  border: 2px solid #4a2d2d;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   cursor: grab;
-  text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
 }
-
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 12px rgba(#e4cb42);
+  border-color: #e4cb42;
+}
 .card:active {
   cursor: grabbing;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  border-color: #8b0000;
+/* Cabeçalho do card (nome) */
+.card h3 {
+  background: #8b0000;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
 }
 
-/* === Rodapé === */
+/* Ícone do guerreiro  */
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-top: 2px;
+}
+
+/* Stats -------------------------------------------------------------- */
+.card p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f0e6;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.card p:nth-of-type(1)::before {
+  content: "\1F5E1\FE0F  "; /* 🗡️ */
+  margin-right: 4px;
+}
+.card p:nth-of-type(2)::before {
+  content: "\1F6E1\FE0F  "; /* 🛡️ */
+  margin-right: 4px;
+}
+
+/* === Rodapé =========================================================== */
 footer {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 40px;
   font-style: italic;
+  color: #440404;
 }
-
