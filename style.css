@@ -19,7 +19,7 @@ header h1 {
   font-family: 'MedievalSharp', Georgia, 'Times New Roman', serif;
   letter-spacing: 1px;
   margin-bottom: 6px;
-  color: #000000; /* vinho queimado */
+  color: #000000; 
 }
 header p {
   font-size: 1.1rem;
@@ -54,6 +54,7 @@ header p {
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  text-align: center;
 }
 .arena-title {
   position: absolute;
@@ -116,7 +117,8 @@ button {
   transition: background 0.25s;
 }
 button:hover {
-  background: #a3872a;
+  background: #ffc919;
+  color: #000000;
 }
 
 /* === Seleção de Guerreiros =========================================== */
@@ -293,3 +295,11 @@ button:hover {
   margin: 3px 0px;
 }
 
+footer {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  background-color: #e6e6e6;
+  color: #420303;
+  padding: 10px 0;
+  margin-top: 10px;
+}
