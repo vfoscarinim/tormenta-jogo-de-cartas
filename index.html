@@ -8,6 +8,8 @@
     <!-- linka o CSS externo que foi substituído logo abaixo -->
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+    
   </head>
   <body>
     <!-- ===== Cabeçalho =================================================== -->
@@ -45,111 +47,212 @@
       </div>
     </section>
 
-    <!-- ===== Seleção de Guerreiros ===================================== -->
-    <section class="selecao-guerreiros">
-      <h2>Escolha seus Guerreiros</h2>
-      <div class="cards-container">
-        <div class="card" draggable="true" data-ataque="90" data-defesa="40">
-  <h3>Arcanista</h3>
-  <img src="arcanista.png">
-  <p>Ataque: 90</p>
-  <p>Defesa: 40</p>
-</div>
+ <!-- ===== Seleção de Guerreiros ===================================== -->
+<section class="selecao-guerreiros">
+  <h2>Escolha seus Guerreiros</h2>
+  <div class="cards-container">
 
-<div class="card" draggable="true" data-ataque="110" data-defesa="70">
-  <h3>Bárbaro</h3>
-  <img src="barbaro.png">
-  <p>Ataque: 110</p>
-  <p>Defesa: 70</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="85" data-defesa="60">
-  <h3>Bardo</h3>
-  <img src="bardo.png">
-  <p>Ataque: 85</p>
-  <p>Defesa: 60</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="120" data-defesa="50">
-  <h3>Bucaneiro</h3>
-  <img src="bucaneiro.png">
-  <p>Ataque: 120</p>
-  <p>Defesa: 50</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="95" data-defesa="85">
-  <h3>Caçador</h3>
-  <img src="caçador.png">
-  <p>Ataque: 95</p>
-  <p>Defesa: 85</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="100" data-defesa="110">
-  <h3>Cavaleiro</h3>
-  <img src="cavaleiro.png">
-  <p>Ataque: 100</p>
-  <p>Defesa: 110</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="85" data-defesa="100">
-  <h3>Clérigo</h3>
-  <img src="clerigo.png">
-  <p>Ataque: 85</p>
-  <p>Defesa: 100</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="95" data-defesa="60">
-  <h3>Druida</h3>
-  <img src="druida.png">
-  <p>Ataque: 95</p>
-  <p>Defesa: 60</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="90" data-defesa="120">
-  <h3>Guerreiro</h3>
-  <img src="guerreiro.png">
-  <p>Ataque: 90</p>
-  <p>Defesa: 120</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="95" data-defesa="85">
-  <h3>Inventor</h3>
-  <img src="inventor.png">
-  <p>Ataque: 95</p>
-  <p>Defesa: 85</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="100" data-defesa="70">
-  <h3>Ladino</h3>
-  <img src="ladino.png">
-  <p>Ataque: 100</p>
-  <p>Defesa: 70</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="100" data-defesa="80">
-  <h3>Lutador</h3>
-  <img src="lutador.png">
-  <p>Ataque: 100</p>
-  <p>Defesa: 80</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="90" data-defesa="90">
-  <h3>Nobre</h3>
-  <img src="nobre.png">
-  <p>Ataque: 90</p>
-  <p>Defesa: 90</p>
-</div>
-
-<div class="card" draggable="true" data-ataque="95" data-defesa="110">
-  <h3>Paladino</h3>
-  <img src="paladino.png">
-  <p>Ataque: 95</p>
-  <p>Defesa: 110</p>
-        
+    <div class="card" draggable="true" data-ataque="90" data-defesa="40">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Arcanista</h3>
+          <img src="arcanista.png" alt="Arcanista">
+          <p>🗡️Ataque: <b>90</b></p>
+          <p>🛡️Defesa: <b>40</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Ripp. Sua magia, infelizmente, usa cabelos como matéria-prima.”</p>
+        </div>
       </div>
-    </section>
+    </div>
 
-    
+    <div class="card" draggable="true" data-ataque="110" data-defesa="70">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Bárbaro</h3>
+          <img src="barbaro.png" alt="Bárbaro">
+          <p>🗡️Ataque: <b>110</b></p>
+          <p>🛡️Defesa: <b>70</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Klunc, o bárbaro. Lutará por presunto e por seus amigos, nesta ordem.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="85" data-defesa="60">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Bardo</h3>
+          <img src="bardo.png" alt="Bardo">
+          <p>🗡️Ataque: <b>85</b></p>
+          <p>🛡️Defesa:<b>60</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Senomar. Música para inspirar os heróis com rebeldia e estilo.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="120" data-defesa="50">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Bucaneiro</h3>
+          <img src="bucaneiro.png" alt="Bucaneiro">
+          <p>🗡️Ataque:<b>120</b></p>
+          <p>🛡️Defesa: <b>50</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Nargom. Capitão pirata falastrão e (muito) fugaz.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="95" data-defesa="85">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Caçador</h3>
+          <img src="caçador.png" alt="Caçador">
+          <p>🗡️Ataque: <b>95</b></p>
+          <p>🛡️Defesa: <b>85</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Enver. Alguém precisa acabar com esses goblinoides malditos!
+.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="100" data-defesa="110">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Cavaleiro</h3>
+          <img src="cavaleiro.png" alt="Cavaleiro">
+          <p>🗡️Ataque: <b>100</b></p>
+          <p>🛡️Defesa: <b>110</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Orion Drake. Nem dor, nem medo, nem mutilação podem deter o cavaleiro da Luz.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="85" data-defesa="100">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Clérigo</h3>
+          <img src="clerigo.png" alt="Clérigo">
+          <p>🗡️Ataque: <b>85</b></p>
+          <p>🛡️Defesa: <b>100</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Vanessa Drake. Clériga e controversa heroína da luta contra a Tormenta.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="95" data-defesa="60">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Druida</h3>
+          <img src="druida.png" alt="Druida">
+          <p>🗡️Ataque: <b>95</b></p>
+          <p>🛡️Defesa: <b>60</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Oihana e Presa Ligeira. Povos civilizados devem ser lembrados sobre as verdades do mundo.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="90" data-defesa="120">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Guerreiro</h3>
+          <img src="guerreiro.png" alt="Guerreiro">
+          <p>🗡️Ataque: <b>90</b></p>
+          <p>🛡️Defesa: <b>120</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Val. Ser duelista urbana é apenas um dos muitos caminhos do guerreiro.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="95" data-defesa="85">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Inventor</h3>
+          <img src="inventor.png" alt="Inventor">
+          <p>🗡️Ataque: <b>95</b></p>
+          <p>🛡️Defesa: <b>85</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Marlin e Ray. Nada é mais estranho que inventores e seus inventos.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="100" data-defesa="70">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Ladino</h3>
+          <img src="ladino.png" alt="Ladino">
+          <p>🗡️Ataque: <b>100</b></p>
+          <p>🛡️Defesa: <b>70</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Leon Galtran. Roubar bolsas de mercadores ou tesouros de dragões, qual a diferença?.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="100" data-defesa="80">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Lutador</h3>
+          <img src="lutador.png" alt="Lutador">
+          <p>🗡️Ataque: <b>100</b></p>
+          <p>🛡️Defesa: <b>80</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Maquius, campeão pugilista. Nem todos precisam de aço para provar sua força.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="90" data-defesa="90">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Nobre</h3>
+          <img src="nobre.png" alt="Nobre">
+          <p>🗡️Ataque: <b>90</b></p>
+          <p>🛡️Defesa: <b>90</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Lady Ayleth. Nobreza não está em coroas ou palácios; está na coragem de mudar o mundo.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" draggable="true" data-ataque="95" data-defesa="110">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Paladino</h3>
+          <img src="paladino.png" alt="Paladino">
+          <p>🗡️Ataque: <b>95</b></p>
+          <p>🛡️Defesa: <b>110</b></p>
+        </div>
+        <div class="card-back">
+          <p class="descricao">“Lothar Algherulff, herói da Guerra Artoniana. Paladinos combatem o mal a todo custo.”</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+   
 
     <!-- ===== JavaScript ================================================= -->
     <script src="script.js"></script>
