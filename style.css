@@ -303,3 +303,118 @@ footer {
   padding: 10px 0;
   margin-top: 10px;
 }
+
+/* ====================================================================== */
+/* Design Responsivo - Media Queries */
+/* ====================================================================== */
+
+/* Para telas menores que 768px (comum para tablets e celulares maiores) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem; /* Ligeiramente menor para tablets */
+  }
+
+  .board {
+    flex-direction: column; /* Empilha arenas e controles verticalmente */
+    align-items: center;
+    max-width: 90%; /* Ajusta a largura máxima para melhor encaixe */
+    padding: 15px;
+  }
+
+  .arena {
+    width: 200px; /* Arenas ligeiramente menores */
+    height: 200px;
+    margin-bottom: 25px; /* Mais espaço entre elementos empilhados */
+  }
+
+  .controls {
+    min-width: unset; /* Remove min-width para flexibilidade */
+    width: 90%; /* Controles ocupam mais largura */
+    margin: 20px 0; /* Ajusta a margem para o empilhamento */
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Cartas menores em tablets */
+    gap: 15px;
+  }
+
+  .card {
+    width: 120px;
+    height: 180px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Para telas menores que 480px (comum para celulares) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.0rem; /* Ainda menor para celulares */
+  }
+
+  header p {
+    font-size: 1.0rem;
+  }
+
+  .board {
+    padding: 10px;
+    margin: 0 auto 25px;
+  }
+
+  .arena {
+    width: 180px; /* Arenas menores para celulares */
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .arena-title {
+    font-size: 0.75rem;
+    top: -22px; /* Ajusta a posição */
+  }
+
+  .controls {
+    width: 100%; /* Largura total para os controles */
+    margin: 15px 0;
+  }
+
+  .status, .log, button {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .selecao-guerreiros h2 {
+    font-size: 1.2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Cartas menores em celulares */
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .card {
+    width: 100px;
+    height: 160px;
+  }
+
+  .card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card h3 {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+
+  .card p {
+    font-size: 0.7rem;
+  }
+
+  .card-back .descricao {
+    font-size: 0.8rem;
+  }
+}
