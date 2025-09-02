@@ -6,7 +6,7 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 body {
-  background: #f3f0e6 url(fundo\ \(2\).png);
+  background: #f3f0e6 url('/img/fundo\ \(2\).png');
 }
 
 /* === Cabeçalho === */
